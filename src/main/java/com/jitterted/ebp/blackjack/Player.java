@@ -29,7 +29,7 @@ public class Player {
   }
 
   public void win() {
-    balance += bet * 2;
+    balance += bet * 2 + (bet >= 100 ? 10 : 0);
   }
 
   public void lose() {

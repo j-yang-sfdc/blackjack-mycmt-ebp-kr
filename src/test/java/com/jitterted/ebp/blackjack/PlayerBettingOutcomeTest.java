@@ -60,6 +60,17 @@ public class PlayerBettingOutcomeTest {
   }
 
   @Test
+  public void playerWith200Bets100AndWinsThenBalanceIs310() {
+    Player player = new Player(200);
+
+    player.bet(100);
+    player.win();
+
+    assertThat(player.balance())
+            .isEqualTo(200 - 100 + 100 * 2 + 10);
+  }
+
+  @Test
   public void playerWith34Bets16AndWinsThenTotalAmountBetIs26() {
     Player player = new Player(34);
 
